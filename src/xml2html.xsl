@@ -26,6 +26,7 @@
 </xsl:template>
 
 <xsl:template match="entries">
+  <h2>List of entries</h2>
   <xsl:apply-templates/>
 </xsl:template>
 
