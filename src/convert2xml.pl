@@ -1,9 +1,8 @@
-#!perl -w
+#!/usr/bin/perl -w
 
 use utf8;
 
-print "<html>\n";
-print "<body>\n";
+print "<dictionary>\n";
 
 while (<>) {
 
@@ -404,14 +403,29 @@ s/(<I>to draw) $/$1<\/I>/ ;
 s/(<I>fatherly) (<PAGE)/$1<\/I>\n\n$2/ ;
 s/(<I>into after death,)/$1<\/I>/ ;
 s/(<I>rasta = GREEK,<)(I>)/$1\/$2/ ;
-s/(<I>unpromising for peace,)/$1<\/I>/g ;
+s/(<I>unpromising for peace,)/$1<\/I>/ ;
+s/(fool, lubber.)/$1<\/I>/ ;
+s/(<I>a shrill sound.)/$1<\/I>/ ;
+s/(to be held in small repute.)/$1<\/I>/ ;
+s/(and needles.\))/$1<\/I>/ ;
+s/(<I>the hoof\.)/$1<\/I>/ ;
 
-#Some HTML changes for easier proofreading in a web browser:
-s/<HEADER>/<h2>/g ;
-s/<\/HEADER>/<\/h2>/g ;
+# Comma should *follow* the B tag:
+s/,<\/B>/<\/B>,/g ;
+
+# Insert a wrapper for the entries after the intro:
+s/(<\/INTRODUCTION>)/$1\n\n<entries>/ ;
+
+# Insert an opening <e> element at the first entry:
+s/(A\. is the first letter)/<e>$1/ ;
+
+# Remove stranded end tags:
+s/^<\/I>$//;
+s/<\/I> (<B>ánalegr<\/B>)/$1/ ;
 
 print ;
 }
 
-print "</body>\n";
-print "</html>\n";
+print "\n</e>\n";
+print "\n</entries>\n";
+print "</dictionary>\n";
