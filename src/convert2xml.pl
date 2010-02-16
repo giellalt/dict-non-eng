@@ -2,6 +2,8 @@
 
 use utf8;
 
+print "<?xml version=\"1.0\"?>\n";
+print "<?xml-stylesheet type=\"text/xsl\" href=\"./xml2html.xsl\"?>\n";
 print "<dictionary>\n";
 
 while (<>) {
