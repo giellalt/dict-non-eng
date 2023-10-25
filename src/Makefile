@@ -29,7 +29,7 @@ character_database.txt:
 
 oi_cleasbyvigfusson.txt:
 	curl -o oi_cleasbyvigfusson.txt \
-			http://lexicon.ff.cuni.cz/txt/oi_cleasbyvigfusson.txt
+			http://www.germanic-lexicon-project.org/txt/oi_cleasbyvigfusson.txt
 
 clean:
 	rm -f *.xml \
